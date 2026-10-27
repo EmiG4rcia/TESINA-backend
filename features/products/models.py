@@ -41,6 +41,6 @@ class ProductRecipe(Base):
     unit = Column(String(20), nullable=False)
     yield_quantity = Column(DECIMAL(10, 3), nullable=False, default=1)
     deleted_at = Column(TIMESTAMP, nullable=True)
-
+    yield_unit = Column(String(20), nullable=False, default='unidad')
     product = relationship("Product", back_populates="recipes")
     raw_material = relationship("RawMaterial", back_populates="recipes")   

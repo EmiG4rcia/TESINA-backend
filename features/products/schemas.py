@@ -41,6 +41,7 @@ class RecipeItemCreate(BaseModel):
     estimated_quantity: Decimal
     unit: str
     yield_quantity: Optional[Decimal] = Decimal("1")
+    yield_unit: Optional[str] = "unidad"
 
 class RecipeItemResponse(BaseModel):
     id: int
@@ -48,6 +49,7 @@ class RecipeItemResponse(BaseModel):
     estimated_quantity: Decimal
     unit: str
     raw_material_name: Optional[str] = None
-
+    yield_unit: str = "unidad"
+    yield_quantity: Decimal = Decimal("1")
     class Config:
         from_attributes = True

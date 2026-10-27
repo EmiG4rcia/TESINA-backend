@@ -78,6 +78,8 @@ def get_recipe(db: Session, product_id: int) -> List[RecipeItemResponse]:
             raw_material_id=item.raw_material_id,
             estimated_quantity=item.estimated_quantity,
             unit=item.unit,
+            yield_quantity=item.yield_quantity,
+            yield_unit=item.yield_unit,
             raw_material_name=item.raw_material.name if item.raw_material else None,
         )
         for item in items
@@ -102,6 +104,8 @@ def add_recipe_item(db: Session, product_id: int, data: RecipeItemCreate) -> Rec
         raw_material_id=item.raw_material_id,
         estimated_quantity=item.estimated_quantity,
         unit=item.unit,
+        yield_quantity=item.yield_quantity,
+        yield_unit=item.yield_unit,
         raw_material_name=item.raw_material.name if item.raw_material else None,
     )
 
